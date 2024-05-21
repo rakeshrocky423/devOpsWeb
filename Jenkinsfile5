@@ -1,0 +1,23 @@
+@Library ('My-Jenkins-sharedLibrary')
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    build {}
+                }
+            }
+        }    
+
+        stage('Deploy') {
+            steps {
+                script {
+                    deployDemo {}
+                }
+            }
+        }
+    }
+}
